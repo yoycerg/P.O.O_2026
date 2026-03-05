@@ -136,3 +136,44 @@ function matrizTrabajar() {
 
     alert(tablero)
 }
+
+/* Ejercicio 9: El Consultorio Médico (Complejo)
+Instrucciones: Crea una función con un arreglo let pacientes = ["Ana", "Betto"];.
+Llegan dos pacientes más: "Carlos" y "Diana" (usa .push()).
+Atienden al primero (usa .shift()).
+Llega una urgencia: "Sonia" debe ser atendida de inmediato (usa .unshift()).
+Muestra cuántos pacientes quedan y quién es el siguiente en la lista.
+ */
+
+function medico() {
+    let pacientes = ["Ana", "Betto"];
+    pacientes.push("Carlos", "Diana");
+    pacientes.push("Diana");
+    pacientes.shift();
+    pacientes.unshift("Sonia");
+
+    alert(`Quedan ${pacientes.length()} y el siguiente es ${pacientes[1]}`)
+}
+
+/* Ejercicio 10: Extracción de Profundidad (Matriz 3x3x3)
+Instrucciones: Dada la siguiente estructura:
+JavaScript
+let caja = [
+  ["frutas", "verduras"],
+  [["manzana", "pera"], ["tomate", "lechuga"]]
+];
+
+Accede a "pera" y a "lechuga".
+Crea una frase que diga: "En la canasta hay pera y lechuga".
+Muestra con alert().
+ */
+
+function extraccion() {
+let caja = [
+    ["frutas", "verduras"],
+    [["manzana", "pera"], ["tomate", "lechuga"]]
+];
+
+alert(`En la canasta hay una ${caja[1][0][1]} y ${caja[1][1][1]}.`)
+
+}
