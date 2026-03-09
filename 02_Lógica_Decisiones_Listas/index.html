@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="eS">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Autor/a del documento -->
+    <meta name="author" content="yoicergarcia@liceovvh.cl">
+    <!-- Tiulo -->
+    <title>Arreglos y matrices JS</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Estilos Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main class="container p-2 d-flex">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 1</h5>
+                <p class="card-text">El Portero Digital</p>
+                <a href="#" class="btn btn-primary" onclick="porteroDigital()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 2</h5>
+                <p class="card-text"> Validador de Nombres</p>
+                <a href="#" class="btn btn-primary" onclick="validadorNombres()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 3</h5>
+                <p class="card-text">El Filtro de Duplicados</p>
+                <a href="#" class="btn btn-primary" onclick="filtroDuplicados()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 4</h5>
+                <p class="card-text"> Control de Stock Máximo</p>
+                <a href="#" class="btn btn-primary" onclick="controlStock()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 5</h5>
+                <p class="card-text"> Limpieza de Datos</p>
+                <a href="#" class="btn btn-primary" onclick="limpiezaDatos()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 6</h5>
+                <p class="card-text">Acceso VIP</p>
+                <a href="#" class="btn btn-primary" onclick="accesoVIP()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 7</h5>
+                <p class="card-text">Sistema de Calificaciones Chile (Escala 1 a 7)</p>
+                <a href="#" class="btn btn-primary" onclick="sistemaNotas()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 8</h5>
+                <p class="card-text">Buscador de Invitados</p>
+                <a href="#" class="btn btn-primary" onclick="buscadorInvitados()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 9</h5>
+                <p class="card-text">El Almacén de Matrices (2D Arrays)</p>
+                <a href="#" class="btn btn-primary" onclick="almacenMatrices()">Ejecutar</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Ejercicio 10</h5>
+                <p class="card-text">Registro Maestro de Visitas</p>
+                <a href="#" class="btn btn-primary" onclick=" registroVisitas()">Ejecutar</a>
+            </div>
+        </div>
+
+    </main>
+    <script src="static/js/script.js"></script>
+
+</body>
+
+</html>
