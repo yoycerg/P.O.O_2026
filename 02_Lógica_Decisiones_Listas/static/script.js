@@ -118,13 +118,85 @@ Si es menor a 4: "Reprobado".
 (Pista: Usa else if).
  */
 
-function CalificacionChile() {
+function sistemaNotas() {
     let nota = parseInt(prompt("Ingresar la nota: "));
-    if (6 >= 7) {
-alert ("Excelente, eximido");
-    } else if (4 >= 0) {
-        alert("Aprobado, vas a examen") 
-            
-        
+    if (nota >= 6 && nota <= 7) {
+        alert("Excelente, eximido");
+    } else if (nota >= 0 && nota <= 5.9) {
+        alert("Aprobado, vas a examen")
+    } else if (nota < 4 && nota >= 1) {
+        alert("Reprobado")
+    } else {
+        alert("Ingrese un valor valoido")
     }
+}
+
+
+/*8. Buscador de Invitados
+let invitados = ["Ana", "Luis", "Camila", "Diego"];
+Crea una variable persona.
+Si la persona está en la lista, muestra: "¡Bienvenido/a [nombre]! Pasa a la fiesta".
+Si no está, muestra: "Lo siento, no estás en la lista de invitados".
+ */
+
+function buscadorInvitados() {
+    let invitados = ["Ana", "Luis", "Camila", "Diego"]
+    let personas = prompt("Ingrese su nombre: ");
+    if (invitados.includes(personas)) {
+        alert(`¡Bienvenido/a ${personas}! pasa la fiesta`);
+    } else {
+        alert("Los siento, no estás en la lista de invitados");
+    }
+}
+
+
+/*9. El Almacén de Matrices (2D Arrays)
+Imagina una estantería con dos niveles (una matriz):
+let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
+Crea una variable seccion (0 o 1) y una variable producto.
+Accede a la sección elegida. Si el producto solicitado está en esa sub-lista, muestra: "Producto encontrado en el estante".
+Si no, muestra: "No tenemos ese producto en esa sección".
+ */
+
+function almacenMatrices() {
+    let estanteria = [["Manzana", "Peras"], ["Leche", "Yogur"]];
+    let seccion = prompt("Ingresar una seccion(0-1)");
+    let productos = prompt("ingresar productos solicitado");
+    if (seccion !== 0 || seccion !== 1) {
+        alert("Producto encontrado en el estante")
+    } else if (estanteria[seccion].includes(productos)) {
+        alert("Producto encontrado en el estante")
+    } else {
+        alert("No tenemos ese producto en esa sección")
+    }
+}
+
+/*10. Registro Maestro de Visitas
+Crea un arreglo vacío llamado bitacora.
+Declara las variables nombreVisita y esVip (booleano).
+Si el nombre está vacío: Mostrar error.
+Si el nombre existe y esVip es true: Agregarlo al inicio con .unshift().
+Si el nombre existe y esVip es false: Agregarlo al final con .push().
+Al final, muestra cuántas personas hay en total usando .length.
+ */
+let bitacora = [];
+function registroVisitas() {
+    let nombreVisita = prompt("Ingresa tu nombre:");
+    let esVip = prompt(`¿Eres VIP?/n solo responde "Si" o "No"`);
+    nombreVisita = nombreVisita.trim();
+    if (nombreVisita == "") {
+        alert("Error: el nombre no puede estar vacío.")
+    } else if (bitacora.includes(nombreVisita)) {
+        alert("Esa persona ya está en la lista.")
+    } else if (esVip == 1) {
+        bitacora.unshift(nombreVisita);
+        alert(`Agregado correctamente a la visita:\n${bitacora.join(", ")}\npersonas en total ${bitacora.length}`)
+    } else if (esVip == 0) {
+        bitacora.push(nombreVisita);
+        alert(`Agregado correctamente a la lista:\n${bitacora.join(", ")}\npersonas en total: ${bitacora.length}`)
+    } else {
+        alert("Ingrese valores válidos")
+    }
+
+
 }
