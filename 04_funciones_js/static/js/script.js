@@ -8,12 +8,55 @@ Modifica el textContent del párrafo para mostrar: "Alumnos presentes: " seguido
 Limpia el input vaciando su .value.
  */
 
-function registrarAlumno() {
-    let asistencia = [];
-    const input = document.getElementById("input1").value;
-    const container = document.getElementById('resultadoContainer1');
-    const resultado = document.getElementById('result1')
+let asistencia = [];
+function agregarLista(nombre) {
+    asistencia.push(nombre);
+    return asistencia.join(", ");
+}
 
-    
+function registrarAlumno() {
+    const container = document.getElementById('resultadoContainer1');
+    const result = document.getElementById('result1')
+    const input = document.getElementById("input1");
+    let nombre = input.value;
+
+    let resultado = agregarLista(nombre);
+    result.textContent = resultado;
+    input.value = "";
     container.classList.remove('d-none');
 }
+
+/*Ejercicio 2: Fila de Urgencias Médicas (unshift e if)
+Contexto: En un hospital, los pacientes graves no van al final de la fila, pasan directamente al primer lugar de atención.
+Crea un arreglo: let pacientes = ["Carlos", "María", "Diego"];
+Función Principal: Crea ingresarUrgencia().
+Captura el nombre del paciente desde el input.
+Usa un if para revisar si el input NO está vacío (!== "").
+Si escribieron un nombre, usa .unshift() para agregarlo al inicio del arreglo pacientes.
+Muestra en el textContent del párrafo: "Próximos a atender: " seguido del arreglo.
+Limpia el input.
+ */
+
+let paciente = ["Carlos", "María", "Diego"];
+function agregarUrgencia(nombre) {
+    paciente.unshift(nombre);
+    return paciente.join(", ")
+}
+
+function ingresarUrgencia() {
+    const container = document.getElementById('resultadoContainer2');
+    const result = document.getElementById('result2')
+    const input = document.getElementById("input2");
+    if (input.value !== "") {
+        let nombre = input.value;
+        let resultado = agregarUrgencia(nombre);
+        result.textContent = resultado;
+        input.value = "";
+        container.classList.remove("d-none");
+    } else {
+        alert("El nombre no puede estar vacío.");
+    }
+
+
+}
+
