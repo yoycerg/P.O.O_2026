@@ -17,8 +17,10 @@ function verificarNumero() {
 
     if (input.trim() === "") {
         result.textContent = "Debes ingresar un número";
+    } else if (isNaN(input)){
+        result.textContent = "Debes ingresar un valor numérico";
     } else {
-        result.textContent = "Número ingresado correctamente";
+         result.textContent = "Número ingresado correctamente";
     }
     container.classList.remove('d-none');
 }
@@ -140,3 +142,4 @@ function transformarTexto() {
     }
 
 }
+
