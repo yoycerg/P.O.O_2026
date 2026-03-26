@@ -130,7 +130,9 @@ Salida: HOLA MUNDO */
 function transformarTexto() {
     let texto = document.getElementById("input4").value;
     let textoTransformado = texto.toUpperCase();
-    document.getElementById("result4").textContent = textoTransformado;
+    let resultado = document.getElementById("result4");
+    let contenedor = document.getElementById("resultadoContainer4");
+    resultado.textContent = textoTransformado;
     document.getElementById("resultadoContainer4").classList.remove("d-none");
     if (texto === "") {
         document.getElementById("result4").textContent = "Debes ingresar un texto";
@@ -139,21 +141,5 @@ function transformarTexto() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
