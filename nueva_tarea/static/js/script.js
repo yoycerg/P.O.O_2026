@@ -9,20 +9,25 @@
 // Si está vacío → mostrar: "Debes ingresar un número"
 // Si tiene valor → mostrar: "Número ingresado correctamente"
 
-function verificarNumero() {
-
-    const container = document.getElementById('resultadoContainer1');
-    const result = document.getElementById('result1')
-    const input = document.getElementById("input1").value;
-
-    if (input.trim() === "") {
-        result.textContent = "Debes ingresar un número";
-    } else if (isNaN(input)){
-        result.textContent = "Debes ingresar un valor numérico";
+function obtenerMensajeNumero(valor) {
+    if (valor.trim() === "") {
+        return "Debes ingresar un número";
+    } else if (isNaN(valor)) {
+        return "Debes ingresar un valor numérico";
     } else {
-         result.textContent = "Número ingresado correctamente";
+        return "Número ingresado correctamente";
     }
-    container.classList.remove('d-none');
+}
+
+
+
+function verificarNumero() {
+    const input = document.getElementById("input1").value;
+    const mensaje = obtenerMensajeNumero(input);
+    const result = document.getElementById("result1");
+    const container = document.getElementById("resultadoContainer1");
+    result.textContent = mensaje;
+    container.classList.remove("d-none");
 }
 
 
@@ -39,28 +44,32 @@ Mostrar en pantalla:
 "Reprobado" si es menor a 4.0
 "Aprobado" si está entre 4.0 y 5.9
 "Sobresaliente" si es 6.0 o más */
+
+
+
+function clasificarNota(nota) {
+    if (isNaN(nota)) {
+        return "Por favor ingresa una nota válida";
+    }
+    if (nota < 1.0 || nota > 7.0) {
+        return "La nota debe estar entre 1.0 y 7.0";
+    }
+    if (nota < 4.0) {
+        return "Reprobado";
+    } else if (nota >= 4.0 && nota <= 5.9) {
+        return "Aprobado";
+    } else if (nota >= 6.0) {
+        return "Sobresaliente";
+    }
+}
+
 function evaluarNota() {
     let valor = document.getElementById("input2").value;
     let nota = parseFloat(valor);
     let resultado = document.getElementById("result2");
     let contenedor = document.getElementById("resultadoContainer2");
     contenedor.classList.remove("d-none");
-    if (isNaN(nota)) {
-        resultado.textContent = "Por favor ingresa una nota válida";
-        return;
-    }
-    if (nota < 1.0 || nota > 7.0) {
-        resultado.textContent = "La nota debe estar entre 1.0 y 7.0";
-        return;
-    }
-
-    if (nota < 4.0) {
-        resultado.textContent = "Reprobado";
-    } else if (nota >= 4.0 && nota <= 5.9) {
-        resultado.textContent = "Aprobado";
-    } else if (nota >= 6.0) {
-        resultado.textContent = "Sobresaliente";
-    }
+    resultado.textContent = clasificarNota(nota);
 }
 
 
@@ -90,8 +99,6 @@ function procesarNumero() {
     let resultado = document.getElementById("result3");
     let contenedor = document.getElementById("resultadoContainer3");
     contenedor.classList.remove("d-none");
-
-
     if (isNaN(numero)) {
         resultado.textContent = "Por favor ingresa un número válido";
         return;
@@ -99,11 +106,9 @@ function procesarNumero() {
     let cuadrado = calcularCuadrado(numero);
     let triple = calcularTriple(numero);
     resultado.textContent = `Cuadrado: ${cuadrado}, Triple: ${triple}`;
-
     function calcularCuadrado(numero) {
         return numero * numero;
     }
-
     function calcularTriple(numero) {
         return numero * 3;
     }
@@ -128,18 +133,18 @@ Ejemplo esperado:
 Entrada: hola mundo
 Salida: HOLA MUNDO */
 
-function transformarTexto() {
-    let texto = document.getElementById("input4").value;
-    let textoTransformado = texto.toUpperCase();
-    let resultado = document.getElementById("result4");
-    let contenedor = document.getElementById("resultadoContainer4");
-    resultado.textContent = textoTransformado;
-    contenedor.classList.remove("d-none");
+function procesarTexto(texto) {
     if (texto === "") {
-        resultado.textContent = "Debes ingresar un texto";
-        contenedor.classList.remove("d-none");
-        return;
+        return "Debes ingresar un texto";
     }
-
+    return texto.toUpperCase();
 }
 
+function transformarTexto() {
+    const texto = document.getElementById("input4").value;
+    const textoTransformado = procesarTexto(texto);
+    const resultado = document.getElementById("result4");
+    const contenedor = document.getElementById("resultadoContainer4");
+    resultado.textContent = textoTransformado;
+    contenedor.classList.remove("d-none");
+}
