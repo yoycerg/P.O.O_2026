@@ -133,13 +133,14 @@ function transformarTexto() {
     let resultado = document.getElementById("result4");
     let contenedor = document.getElementById("resultadoContainer4");
     resultado.textContent = textoTransformado;
-    document.getElementById("resultadoContainer4").classList.remove("d-none");
+    contenedor.classList.remove("d-none");
     if (texto === "") {
-        document.getElementById("result4").textContent = "Debes ingresar un texto";
-        document.getElementById("resultadoContainer4").classList.remove("d-none");
+        resultado.textContent = "Debes ingresar un texto";
+        contenedor.classList.remove("d-none");
         return;
     }
 
 }
 
 
+ 
