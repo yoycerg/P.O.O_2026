@@ -106,7 +106,6 @@ function procesarNumero() {
         return numero * 3;
     }
 
-
 }
 
 /*
@@ -141,6 +140,3 @@ function transformarTexto() {
     }
 
 }
-
-
- 
